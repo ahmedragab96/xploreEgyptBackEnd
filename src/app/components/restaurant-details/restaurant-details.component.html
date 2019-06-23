@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+
+<div *ngIf="restaurantDetails" class="container">
+	<div class="row" style="margin-top: 10%;">
+		<div class="col-lg-6">
+			<img style="width: 500px;" src="{{restaurantDetails[0]['photo']}}">
+		</div>
+		<div class="col-lg-6">
+			<h1 style="color: #413e3e">{{restaurantDetails[0]['title']}}</h1>
+			<p style="margin-top: 10%;"> <span>Phone</span> : {{restaurantDetails[0]['phone']}}</p>
+			<p> <span>Location</span> : {{restaurantDetails[0]['location']}}</p>
+			<p> <span>Cuisine</span> : {{restaurantDetails[0]['cuisine']}}</p>
+			<p> <span>Rating</span> : {{restaurantDetails[0]['rating']}}</p>
+			<div class="col text-center">
+				<app-booking></app-booking>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<app-review></app-review>
+
+<app-footer></app-footer>

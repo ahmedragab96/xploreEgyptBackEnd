@@ -1,0 +1,110 @@
+body {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+}
+
+/* slider part*/
+
+#container {
+    width: 100%;
+    margin: 5em auto;
+    padding: 0;
+}
+
+    .ng2-carouselamos-container {
+        width: 70%;
+        margin: auto;
+    }
+
+        .slide-items{
+        margin-right: 10px;
+    }
+       .slide-items img{
+            width: 210px;
+            height: 150px;
+    }
+
+        #left{
+            width:42px;
+             height:42px;
+        }
+        #right{
+            width:42px;
+             height:42px;
+        }
+
+
+/*end of slider style */
+.ca
+{
+
+
+}
+
+.btn{
+
+    margin: 3%;
+}
+.card {
+    margin-top: 15px;
+}
+
+.card-body {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+
+.cardBtn {
+    justify-content: flex-end;
+}
+
+#wrap {
+    width: 50%;
+}
+
+.card-text{
+ max-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+#external-events {
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+}
+
+#external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+#external-events .fc-event {
+    margin: 5px 0px 0px 0px;
+    padding: 4px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#external-events .fc-event span {
+    height: 100%;
+}
+
+#planner {
+    margin-top: 25px;
+}
+
+#calendar {
+    float: right;
+    width: 900px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+/**/

@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="container-gallery">
+      <div class="popup popup-1">
+          <img class="img-fluid" alt="Pop Up Gallety" src="./../../../assets/images/fresh-appetizers-cocktails.jpg" />
+      </div>
+      <div class="popup popup-2">
+          <img class="img-fluid" alt="Pop Up Gallety" src="./../../../assets/images/hot-fresh-donut.jpg" />
+      </div>
+      <div class="popup popup-3">
+          <img class="img-fluid" alt="Pop Up Gallety" src="./../../../assets/images/hotel-room-service-classic-breakfast.jpg" />
+      </div>
+      <div class="popup popup-4">
+          <img class="img-fluid" alt="Pop Up Gallety" src="./../../../assets/images/restaurant-breakfast.jpg" />
+      </div>
+      <div class="popup popup-5">
+          <img class="img-fluid" alt="Pop Up Gallety" src="./../../../assets/images/waffles-and-fruit-breakfast.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+  <hr class="style-one">
+
+<h2>Recommended For You</h2>
+<!-- slider -->
+<div id="container">
+    <div
+      ng2-carouselamos
+      class="slides-wrapper"
+      [items]="recommendedRestaurants"
+      [width]="850"
+      [$prev]="prev"
+      [$next]="next"
+      [$item]="item"
+    >
+    </div>
+    <ng-template #prev>
+      <img src="assets/images/left.png" id="left" />
+    </ng-template>
+    <ng-template #next>
+      <img src="assets/images/right.png" id="right" />
+    </ng-template>
+    <ng-template #item let-item let-i="index">
+   
+    <div class="slide-items">
+            <div class="frame">
+                <img src="{{item.photo}}">
+            </div>
+            <div class="frameTitle">
+                <p><b> {{item.title}} </b></p>
+            </div>
+            <div class="components">
+                <p><span class="inCard">Cuisine:</span> {{item.cuisine}} </p>
+                <p><span class="inCard">Location:</span> {{item.location}} </p>
+               <p><span class="inCard">Phone:</span> {{item.phone}} </p>
+            </div>
+        <button class="btn btn-primary cardBtn" [routerLink] = "['/restaurants/',item.itemid]">Read More</button>
+     </div>
+  </ng-template>
+</div>
+<hr class="style-one">
+
+<!-- All Restaurants -->
+<h2>All Restaurants</h2>
+<div class="container">
+    <input class="search col-3" name="search" [(ngModel)]="search" placeholder="Search"> 
+</div>
+
+<div *ngIf="restaurants" class="row">
+    <div class="col-lg-3 col-md-4 col-12" *ngFor="let restaurant of restaurants | Rfilter: 'title' | filter : search : ['title'] | paginate: { itemsPerPage: 12, currentPage: p }">
+        <div class="col d-flex align-items-stretch">
+            <div class="card">
+                <div class="card-body">
+                    <div class="frame">
+                        <img class="img-fluid imgSize" style="height: 170px;" src="{{restaurant['photo']?restaurant['photo']:default}}" alt="NO IMAGE AVAILABLE">              
+                    </div>
+                    <div class="frameTitle">
+                    <h5 class="card-title">{{restaurant['title']}}</h5>
+                    </div>
+                    <div class="card-text components">
+                        <p><span class="inCard">Cuisine:</span>{{restaurant['cuisine']}}</p>
+                        <p><span class="inCard">Location:</span>{{restaurant['location']}}</p>
+                        <p><span class="inCard">Phone:</span> {{restaurant['phone']}} </p>
+                    </div>
+                    <button class="btn btn-primary cardBtn" [routerLink] = "['/restaurants/',restaurant.itemid]" [queryParams]="{q:restaurant['title']}">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="paging">
+    <div class="row">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+ 
+<app-footer></app-footer>
