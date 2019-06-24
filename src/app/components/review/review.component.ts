@@ -10,6 +10,7 @@ export class ReviewComponent implements OnInit {
  @Input() placeid:number;
  @Input() currentRate:number;
  reviews:any;
+ p: any;
   constructor(private reviewsService:ReviewsService) { }
   review(ReviewForm){
   	console.log(this.placeid)
