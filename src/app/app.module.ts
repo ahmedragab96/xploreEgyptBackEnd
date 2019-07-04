@@ -14,7 +14,7 @@ import { MatInputModule,
          MatCardModule,
          MatSelectModule,
          MatOptionModule,
-         MatButtonModule,
+         MatButtonModule
  } from '@angular/material';
 
  import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
